@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102a43" />
+    <title>WDA 題庫小測驗</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">WDA</div>
+        <div>
+          <p class="eyebrow">自我練習工具</p>
+          <h1>題庫小測驗</h1>
+        </div>
+        <div class="topbar-spacer"></div>
+        <button id="resetProgress" class="text-button" type="button">清除答題紀錄</button>
+      </header>
+
+      <section id="emptyState" class="empty-state" hidden>
+        <div class="empty-icon">＋</div>
+        <h2>題庫尚未載入</h2>
+        <p>目前的 PDF 只有 WDA 標誌圖片，沒有題目與答案。補上題庫資料後，這個頁面會自動提供每次 10 題的隨機測驗。</p>
+      </section>
+
+      <section id="quizView" hidden>
+        <div class="status-row">
+          <div>
+            <p class="eyebrow">本回合</p>
+            <h2>選出你認為正確的答案</h2>
+          </div>
+          <div class="progress-wrap" aria-label="答題進度">
+            <span id="progressText">0 / 10</span>
+            <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+          </div>
+        </div>
+        <div id="questionList" class="question-list"></div>
+        <button id="submitQuiz" class="primary-button" type="button">送出並查看成績</button>
+      </section>
+
+      <section id="resultView" class="result-view" hidden>
+        <div class="result-banner">
+          <p class="eyebrow">本回合結果</p>
+          <div class="score-line"><strong id="scoreText">0 / 0</strong><span id="scoreMessage"></span></div>
+        </div>
+        <div id="reviewList" class="review-list"></div>
+        <button id="nextQuiz" class="primary-button" type="button">再次測驗</button>
+      </section>
+
+      <footer class="footer-note">每回合 10 題｜答對的題目會暫時避開，答錯的題目會持續練習</footer>
+    </main>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
