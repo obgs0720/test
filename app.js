@@ -1,6 +1,6 @@
 // 將真正題目填入這個陣列即可：{ id, question, options: [], answer: 0 }
 const QUESTION_BANK = window.QUESTION_BANK || [];
-const STORAGE_KEY = 'wda-quiz-progress-v1';
+const STORAGE_KEY = 'wda-quiz-progress-v2-900060A14';
 const state = { quiz: [], answers: {}, progress: loadProgress(), submitted: false };
 const $ = (id) => document.getElementById(id);
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
